@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-dark text-white font-body;
+  }
+  ::selection {
+    @apply bg-brand-gold text-brand-dark;
+  }
+}
+
+@layer utilities {
+  .animate-glow-slow {
+    animation: glow 4s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    0%, 100% { border-color: rgba(245, 166, 35, 1); box-shadow: 0 0 20px rgba(245, 166, 35, 0.4); }
+    50% { border-color: rgba(245, 166, 35, 0.2); box-shadow: 0 0 60px rgba(245, 166, 35, 0.6); }
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .glass-dark {
+    background: rgba(10, 15, 30, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+  }
+  
+  .gold-text {
+    background: linear-gradient(135deg, #F5A623, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .dot-pattern {
+    background-image: radial-gradient(rgba(245, 166, 35, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .section-divider {
+    clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0F1E;
+}
+::-webkit-scrollbar-thumb {
+  background: #F5A623;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD700;
+}
