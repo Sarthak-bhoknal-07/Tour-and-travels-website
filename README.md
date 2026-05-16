@@ -177,7 +177,6 @@ DB_NAME=tours
 ---
 
 ## 👨‍💻 Author
-
 **Sarthak Bhoknal**
 
 ---
